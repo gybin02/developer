@@ -36,8 +36,7 @@ public class AppRocketConfig extends RocketConfig {
      * Title 用来显示Button文字
      * Method should have no parameter.
      */
-    @Title("测试请求网络")
-    @Button
+    @Button("测试请求网络")
     public void requestNetwork() {
         Log.d(TAG, " 测试请求网络 requestNetwork");
     }
@@ -77,7 +76,7 @@ public class AppRocketConfig extends RocketConfig {
     }
 
     @Title("显示Edit TextView")
-    @EditText("搜索")
+    @EditText("显示Edit TextView, Hint ")
     public void doSearch(String key) {
         String content = "Hello world";
         Log.d(TAG, "doSearch: ");

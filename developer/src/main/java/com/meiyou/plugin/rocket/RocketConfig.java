@@ -9,7 +9,6 @@ import android.widget.Toast;
 import com.linggan.zxing.activity.ZXingLibrary;
 import com.linggan.zxing.activity.ZxingCallback;
 import com.meiyou.plugin.rocket.annotation.Button;
-import com.meiyou.plugin.rocket.annotation.Title;
 import com.meiyou.plugin.rocket.common.ConfigListener;
 import com.meiyou.plugin.rocket.common.RuntimeUtil;
 
@@ -70,8 +69,7 @@ public abstract class RocketConfig implements ConfigListener {
     /**
      * 进入二维码扫描
      */
-    @Title("二维码扫一扫，进入WebView查看Uri")
-    @Button
+    @Button("二维码扫一扫，进入WebView执行Uri")
     public void openQrCode() {
         Context context = getContext();
         ZXingLibrary.initDisplayOpinion(context);
@@ -92,23 +90,20 @@ public abstract class RocketConfig implements ConfigListener {
     /**
      * 清除本应用内部缓存
      */
-    @Title("清除应用缓存并退出")
-    @Button
-    public void uclearAppCache() {
+    @Button("清除应用缓存并退出")
+    public void u_clearAppCache() {
         RuntimeUtil.clearApp(context);
         Toast.makeText(context, "清除应用缓存成功", Toast.LENGTH_SHORT).show();
     }
 
-    @Title("卸载应用")
-    @Button
+    @Button("卸载应用")
     public void uninstallApp() {
         RuntimeUtil.uninstall(context);
         Toast.makeText(context, "卸载应用成功", Toast.LENGTH_SHORT).show();
     }
 
 
-    @Title("使用帮助")
-    @Button
+    @Button("使用帮助")
     public void a_openWeb() {
         Intent intent = new Intent();
         String wiki = "http://git.meiyou.im/Android/Android/wikis/%E5%BC%80%E5%8F%91%E8%80%85%E9%A1%B5%E9%9D%A2";
