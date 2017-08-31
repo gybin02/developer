@@ -91,12 +91,12 @@ public abstract class RocketConfig implements ConfigListener {
      * 清除本应用内部缓存
      */
     @Button("清除应用缓存并退出")
-    public void u_clearAppCache() {
+    public void clearAppCache() {
         RuntimeUtil.clearApp(context);
         Toast.makeText(context, "清除应用缓存成功", Toast.LENGTH_SHORT).show();
     }
 
-    @Button("卸载应用")
+    @Button("卸载应用，对root设备有效")
     public void uninstallApp() {
         RuntimeUtil.uninstall(context);
         Toast.makeText(context, "卸载应用成功", Toast.LENGTH_SHORT).show();
