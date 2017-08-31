@@ -24,7 +24,7 @@ class MethodInfo {
 
     private int viewType = INVALID;
     private Object data;
-    private String title;
+    private String title = "";
     private Object instance;
 
     private MethodInfo(Method method, Object instance) {

@@ -82,5 +82,10 @@ public class AppRocketConfig extends RocketConfig {
         Log.d(TAG, "doSearch: ");
     }
 
+    @EditText("输入Uri，如：meiyou:///news/comment/open")
+    public void doUri(String uri) {
+//        MeetyouDilutions.create().formatProtocolService(uri);
+    }
+
 
 }

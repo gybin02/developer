@@ -25,7 +25,7 @@ public abstract class RocketConfig implements ConfigListener {
 
     private static final String TAG = "RocketConfig";
 
-    private Context context;
+    public Context context;
 
     @Override
     public void setContext(Context context) {
