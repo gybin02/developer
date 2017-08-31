@@ -1,8 +1,8 @@
 # Developer
-测试界面自动生成；
+开发者页面，包含两个功能：
 
--  Rocket 
--  QrCode 
+-  Rocket http://git.meiyou.im/Android/rocket
+-  QrCode  http://git.meiyou.im/Android/QrcodeMain
 
 ### build 
 
@@ -14,3 +14,4 @@ compile 'com.meiyou.framework:developer:1.0.0-SNAPSHOT'
 ```
 
 ### 使用
+参考 Rocket使用
