@@ -98,7 +98,9 @@ class SettingsAdapter extends BaseAdapter {
         Object data = methodInfo.getData();
         if (data != null) {
             String btnText = (String) data;
-            btn.setText(btnText);
+            if (!TextUtils.isEmpty(btnText)) {
+                editText.setHint(btnText);
+            }
         }
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -197,7 +199,7 @@ class SettingsAdapter extends BaseAdapter {
 
         View view = inflater.inflate(R.layout.item_settings_button, parent, false);
         Button button = (Button) view.findViewById(R.id.button);
-        button.setText(methodInfo.getTitle());
+        button.setText((String) methodInfo.getData());
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

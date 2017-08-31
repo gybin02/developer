@@ -13,4 +13,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(METHOD)
 @Retention(RUNTIME)
 public @interface Button {
+    /**
+     * Button 显示名字
+     * @return
+     */
+    String value() default "";
 }

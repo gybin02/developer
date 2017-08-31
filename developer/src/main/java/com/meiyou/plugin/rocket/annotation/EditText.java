@@ -17,6 +17,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(METHOD)
 @Retention(RUNTIME)
 public @interface EditText {
-
-    String value();
+    /**
+     * EditText hint 内容
+     * @return
+     */
+    String value() default "";
 }

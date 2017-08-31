@@ -50,6 +50,7 @@ class MethodInfo {
 
             if (annotationType == Button.class) {
                 viewType = VIEW_BUTTON;
+                data = ((Button) annotation).value();
                 continue;
             }
 

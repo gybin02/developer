@@ -14,5 +14,10 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface Title {
 
-  String value();
+    /**
+     * 控件额外的标题
+     *
+     * @return
+     */
+    String value();
 }

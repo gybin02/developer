@@ -1,6 +1,8 @@
 package com.meiyou.plugin.rocket;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -17,7 +19,7 @@ import java.util.Map;
 /**
  * 默认配置，可以根据这个配置生成 页面
  * 有加注解的类，方法需要是 Public，否则注解找不到的
- * 
+ * <p>
  * This class should be used to provide bridge between bee and the app.
  */
 public abstract class RocketConfig implements ConfigListener {
@@ -104,4 +106,15 @@ public abstract class RocketConfig implements ConfigListener {
         Toast.makeText(context, "卸载应用成功", Toast.LENGTH_SHORT).show();
     }
 
+
+    @Title("使用帮助")
+    @Button
+    public void a_openWeb() {
+        Intent intent = new Intent();
+        String wiki = "http://git.meiyou.im/Android/Android/wikis/%E5%BC%80%E5%8F%91%E8%80%85%E9%A1%B5%E9%9D%A2";
+        intent.setAction(Intent.ACTION_VIEW);
+        Uri content_url = Uri.parse(wiki);
+        intent.setData(content_url);
+        context.startActivity(intent);
+    }
 }
