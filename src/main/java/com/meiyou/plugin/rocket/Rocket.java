@@ -58,7 +58,10 @@ public class Rocket {
             instance = (ConfigListener) clazz.newInstance();
             instance.setContext(settings.getContext());
 
-            fillMethods(clazz.getDeclaredMethods());
+//            Method[] declaredMethods = clazz.getDeclaredMethods();
+            //全部Public method
+            Method[] methods = clazz.getMethods();
+            fillMethods(methods);
 
             helper = new UiHandler(settings, methodInfoList, instance);
             helper.inject();

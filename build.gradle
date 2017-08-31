@@ -19,6 +19,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+//定义后会影响上级
+//    productFlavors {
+//        //线上环境f
+//        product {
+//            manifestPlaceholders = [dev_mode: "false"]
+//        }
+//        //测试环境
+//        zroTest {
+//            manifestPlaceholders = [dev_mode: "true"]
+//        }
+//        //测试环境
+//        yfTest {
+//            manifestPlaceholders = [dev_mode: "true"]
+//        }
+//    }
 }
 
 dependencies {
@@ -28,4 +44,9 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
+
+    compile 'com.meiyou.framework:zxing:1.0.0'
+//    zroTestCompile 'com.meiyou.framework:zxing:1.0.11-SNAPSHOT'
+//    yfTestCompile 'com.meiyou.framework:zxing:1.0.11-SNAPSHOT'
+//    productCompile 'com.meiyou.framework:zxing:1.0.13-noop-SNAPSHOT'
 }
