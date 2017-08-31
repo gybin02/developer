@@ -50,3 +50,5 @@ dependencies {
 //    yfTestCompile 'com.meiyou.framework:zxing:1.0.11-SNAPSHOT'
 //    productCompile 'com.meiyou.framework:zxing:1.0.13-noop-SNAPSHOT'
 }
+
+apply from: "mvn.gradle"
