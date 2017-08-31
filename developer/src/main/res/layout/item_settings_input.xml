@@ -26,6 +26,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:hint="输入内容，点击运行"
+            android:textColorHint="@android:color/darker_gray"
             android:padding="8dp"
             android:textSize="14dp"/>
 
