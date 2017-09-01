@@ -33,11 +33,7 @@
         <Button
             android:id="@+id/btn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@drawable/selector_button"
             android:text="运行"
-            android:textColor="@android:color/black"
-            android:textSize="14sp"/>
+            style="@style/btn_yellow"/>
     </LinearLayout>
 </LinearLayout>
