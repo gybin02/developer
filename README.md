@@ -11,6 +11,8 @@
 -  Rocket http://git.meiyou.im/Android/rocket
 -  QrCode  http://git.meiyou.im/Android/QrcodeMain
 - 开发者页面 http://git.meiyou.im/Android/Android/wikis/%E5%BC%80%E5%8F%91%E8%80%85%E9%A1%B5%E9%9D%A2
+
+![截图](/image/device1.png)
 ### build 
 
 ```groovy
