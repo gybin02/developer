@@ -19,7 +19,7 @@
 ```groovy
 //编译
 compile 'com.meiyou.framework:developer:1.0.0-SNAPSHOT'
-// 经期 只在测试，预发阶段引入；
+// 经期 只在测试，预发阶段引入；因为包含二维码扫描，影响包大小，正式包去掉这功能
 //compile 'com.meiyou.framework:developer-noop:1.0.0-SNAPSHOT'
 ```
 
