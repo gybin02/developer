@@ -13,7 +13,7 @@
 - [开发者页面](http://git.meiyou.im/Android/Android/wikis/%E5%BC%80%E5%8F%91%E8%80%85%E9%A1%B5%E9%9D%A2)
 
 ![jietu2](images/QQ20170920-1.png)
-![截图](/images/device1.png)
+<img src="http://git.meiyou.im/Android/developer/raw/master/images/device1.png" width="340" height="541">
 ### build 
 
 ```groovy
