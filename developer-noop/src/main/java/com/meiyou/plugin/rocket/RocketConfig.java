@@ -15,7 +15,7 @@ public abstract class RocketConfig {
 
     private static final String TAG = "RocketConfig";
 
-    private Context context;
+    public Context context;
 
     public void setContext(Context context) {
         this.context = context;
