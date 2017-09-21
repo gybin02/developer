@@ -1,6 +1,7 @@
 package com.meiyou.plugin.sample;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.meiyou.plugin.rocket.RocketConfig;
 import com.meiyou.plugin.rocket.annotation.Button;
@@ -80,6 +81,7 @@ public class AppRocketConfig extends RocketConfig {
     public void doSearch(String key) {
         String content = "Hello world";
         Log.d(TAG, "doSearch: ");
+        Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
     }
 
     @EditText("输入Uri，如：meiyou:///news/comment/open")
@@ -87,5 +89,8 @@ public class AppRocketConfig extends RocketConfig {
 //        MeetyouDilutions.create().formatProtocolService(uri);
     }
 
-
+    @Override
+    public void onQrcodeSuccess(String result) {
+        super.onQrcodeSuccess(result);
+    }
 }
