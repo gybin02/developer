@@ -1,7 +1,8 @@
-include ':app'
+include ':app', ':developer-kot'
 //include ':rocket'
 include ':developer'
 include ':developer-noop'
+include ':developer-kotlin'
 //include(':developer')
 //project(':developer').projectDir = new File('../developer')
 
