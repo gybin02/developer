@@ -1,7 +1,6 @@
 package com.meiyou.plugin.sample;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,13 +19,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Jet.bind(this);
-        
+
         Rocket.init(this)
               .inject(AppRocketConfig.class);
 //           .setBeeSize(100)
 //           .setBeePosition(Gravity.CENTER)
 //           .setBeeMargin(0, 0, 0, 200)
-        
+
 
 //        BeeLog.d("MainActivity", "onCreate");
 //        BeeLog.d("MainActivity", "user logged in");
@@ -39,8 +38,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         int id = v.getId();
         switch (id) {
             case R.id.button:
-                Intent intent = new Intent(this, DetailActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(this, DetailActivity.class);
+//                startActivity(intent);
+
+//                Intent intent = new Intent(this, Main2Activity.class);
+//                startActivity(intent);
                 break;
 //        case :
 //    

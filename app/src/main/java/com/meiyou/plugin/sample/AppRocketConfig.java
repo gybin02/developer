@@ -55,6 +55,13 @@ public class AppRocketConfig extends RocketConfig {
         Log.d(TAG, "是否显示广告： " + isChecked);
     }
 
+
+    @Title("测试")
+    @CheckBox
+    public void onTest(boolean isCheck) {
+        Log.e(TAG, "onTest: " + isCheck);
+    }
+
     /**
      * 生成一个 Spinner
      *
