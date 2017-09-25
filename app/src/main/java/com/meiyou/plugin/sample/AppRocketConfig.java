@@ -15,7 +15,16 @@ public class AppRocketConfig extends RocketConfig {
 
     private static final String TAG = "AppBeeConfig";
 
-
+    @Title("Test")
+    @CheckBox
+    public void test2(boolean isCheck){
+        
+    }
+    
+    @Button("sdfsd")
+    public void test3(){
+        
+    }
     /**
      * 当打开设置页面的时候
      */
