@@ -6,8 +6,6 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.linggan.zxing.activity.ZXingLibrary;
-import com.linggan.zxing.activity.ZxingCallback;
 import com.meiyou.plugin.rocket.annotation.Button;
 import com.meiyou.plugin.rocket.common.ConfigListener;
 import com.meiyou.plugin.rocket.common.RuntimeUtil;
@@ -66,21 +64,21 @@ public abstract class RocketConfig implements ConfigListener {
     }
 
 
-    /**
-     * 进入二维码扫描
-     */
-    @Button("二维码扫一扫，进入WebView执行Uri")
-    public void openQrCode() {
-        Context context = getContext();
-        ZXingLibrary.initDisplayOpinion(context);
-        ZXingLibrary.scan(context, new ZxingCallback() {
-            @Override
-            public void onSuccess(String result) {
-                super.onSuccess(result);
-                onQrcodeSuccess(result);
-            }
-        });
-    }
+//    /**
+//     * 进入二维码扫描
+//     */
+//    @Button("二维码扫一扫，进入WebView执行Uri")
+//    public void openQrCode() {
+//        Context context = getContext();
+//        ZXingLibrary.initDisplayOpinion(context);
+//        ZXingLibrary.scan(context, new ZxingCallback() {
+//            @Override
+//            public void onSuccess(String result) {
+//                super.onSuccess(result);
+//                onQrcodeSuccess(result);
+//            }
+//        });
+//    }
 
     public void onQrcodeSuccess(String result) {
         Log.d(TAG, "onQrcodeSuccess: " + result);
