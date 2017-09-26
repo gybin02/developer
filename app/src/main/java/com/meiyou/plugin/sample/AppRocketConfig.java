@@ -15,16 +15,17 @@ public class AppRocketConfig extends RocketConfig {
 
     private static final String TAG = "AppBeeConfig";
 
-    @Title("Test")
-    @CheckBox
-    public void test2(boolean isCheck){
-        
-    }
-    
+//    @Title("Test")
+//    @CheckBox
+//    public void test2(boolean isCheck) {
+//
+//    }
+
     @Button("sdfsd")
-    public void test3(){
-        
+    public void test3() {
+
     }
+
     /**
      * 当打开设置页面的时候
      */
@@ -109,4 +110,11 @@ public class AppRocketConfig extends RocketConfig {
     public void onQrcodeSuccess(String result) {
         super.onQrcodeSuccess(result);
     }
+
+    @Title("可视化埋点")
+    @CheckBox
+    public void openWHMD(boolean enable) {
+        Toast.makeText(context, "可视化埋点状态", Toast.LENGTH_SHORT).show();
+    }
+    
 }
