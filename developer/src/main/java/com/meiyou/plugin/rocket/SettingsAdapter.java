@@ -96,7 +96,7 @@ class SettingsAdapter extends BaseAdapter {
         if (!TextUtils.isEmpty(text)) {
             title.setText(text);
         }
-        
+
         final EditText editText = (EditText) view.findViewById(R.id.text_input);
         Button btn = (Button) view.findViewById(R.id.btn);
         Object data = methodInfo.getData();
@@ -226,6 +226,8 @@ class SettingsAdapter extends BaseAdapter {
         View view = inflater.inflate(R.layout.item_settings_checkbox, parent, false);
         ((TextView) view.findViewById(R.id.title)).setText(methodInfo.getTitle());
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkbox);
+        checkBox.setChecked(PrefHelper.getBoolean(context, method.getName()));
+
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -238,7 +240,6 @@ class SettingsAdapter extends BaseAdapter {
                 PrefHelper.setBoolean(context, method.getName(), isChecked);
             }
         });
-        checkBox.setChecked(PrefHelper.getBoolean(context, method.getName()));
 
         return view;
     }

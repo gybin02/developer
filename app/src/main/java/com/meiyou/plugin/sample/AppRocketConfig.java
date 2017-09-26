@@ -114,7 +114,7 @@ public class AppRocketConfig extends RocketConfig {
     @Title("可视化埋点")
     @CheckBox
     public void openWHMD(boolean enable) {
-        Toast.makeText(context, "可视化埋点状态", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "可视化埋点状态: "+enable, Toast.LENGTH_SHORT).show();
     }
     
 }
