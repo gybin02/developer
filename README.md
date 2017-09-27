@@ -98,4 +98,9 @@ public class DeveloperConfig extends RocketConfig {
     }
 ```
 
+#### change log
+##### COMPONENT_VERSION=1.0.0-SNAPSHOT
+- @Checkbox 新增 isTemp功能； 
+- Develop UI 修改
+
 
