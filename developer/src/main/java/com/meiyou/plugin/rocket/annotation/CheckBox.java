@@ -12,4 +12,10 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(METHOD)
 @Retention(RUNTIME)
 public @interface CheckBox {
+    /**
+     * 是否 临时的Checkout ,不保存checkbox状态
+     *
+     * @return
+     */
+    boolean isTemp() default false;
 }

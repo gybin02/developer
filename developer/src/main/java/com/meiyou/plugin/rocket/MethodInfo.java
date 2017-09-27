@@ -56,6 +56,7 @@ class MethodInfo {
 
             if (annotationType == CheckBox.class) {
                 viewType = VIEW_CHECKBOX;
+                data = ((CheckBox) annotation).isTemp();
                 continue;
             }
 

@@ -219,6 +219,7 @@ class SettingsAdapter extends BaseAdapter {
     }
 
     private View createCheckBox(ViewGroup parent, MethodInfo methodInfo) {
+        final boolean isTemp = (boolean) methodInfo.getData();
         final Method method = methodInfo.getMethod();
         final Object instance = methodInfo.getInstance();
         final Context context = parent.getContext();
@@ -236,8 +237,10 @@ class SettingsAdapter extends BaseAdapter {
                 } catch (Exception e) {
                     Log.e(TAG, e.getMessage());
                 }
-
-                PrefHelper.setBoolean(context, method.getName(), isChecked);
+                if (!isTemp) {
+                    PrefHelper.setBoolean(context, method.getName(), isChecked);
+                }
+                
             }
         });
 
