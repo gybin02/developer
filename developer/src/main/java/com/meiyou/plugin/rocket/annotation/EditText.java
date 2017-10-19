@@ -22,4 +22,5 @@ public @interface EditText {
      * @return
      */
     String value() default "";
+    
 }

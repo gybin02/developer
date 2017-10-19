@@ -3,10 +3,13 @@ package com.meiyou.plugin.rocket;
 import android.content.Context;
 import android.util.Log;
 
+import com.meiyou.plugin.rocket.annotation.Order;
 import com.meiyou.plugin.rocket.common.ConfigListener;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -61,6 +64,23 @@ public class Rocket {
 //            Method[] declaredMethods = clazz.getDeclaredMethods();
             //全部Public method
             Method[] methods = clazz.getMethods();
+            Arrays.sort(methods, new Comparator<Method>() {
+                @Override
+                public int compare(Method o1, Method o2) {
+                    Order order1 = o1.getAnnotation(Order.class);
+                    Order order2 = o2.getAnnotation(Order.class);
+                    int value1 = 10000;
+                    if (order1 != null) {
+                        value1 = order1.value();
+                    }
+                    int value2 = 10000;
+                    if (order2 != null) {
+                        value2 = order2.value();
+                    }
+                    
+                    return value1 - value2;
+                }
+            });
             fillMethods(methods);
 
             helper = new UiHandler(settings, methodInfoList, instance);
