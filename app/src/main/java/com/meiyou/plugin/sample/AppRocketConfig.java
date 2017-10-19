@@ -7,6 +7,7 @@ import com.meiyou.plugin.rocket.RocketConfig;
 import com.meiyou.plugin.rocket.annotation.Button;
 import com.meiyou.plugin.rocket.annotation.CheckBox;
 import com.meiyou.plugin.rocket.annotation.EditText;
+import com.meiyou.plugin.rocket.annotation.Order;
 import com.meiyou.plugin.rocket.annotation.Spinner;
 import com.meiyou.plugin.rocket.annotation.TextArea;
 import com.meiyou.plugin.rocket.annotation.Title;
@@ -20,7 +21,7 @@ public class AppRocketConfig extends RocketConfig {
 //    public void test2(boolean isCheck) {
 //
 //    }
-
+    @Order(1)
     @Button("sdfsd")
     public void test3() {
 
@@ -47,6 +48,7 @@ public class AppRocketConfig extends RocketConfig {
      * Title 用来显示Button文字
      * Method should have no parameter.
      */
+    @Order(2)
     @Button("测试请求网络")
     public void requestNetwork() {
         Log.d(TAG, " 测试请求网络 requestNetwork");
@@ -59,6 +61,7 @@ public class AppRocketConfig extends RocketConfig {
      * @Title 用来 显示Label
      * @Method 返回一个参数用来处理是否点击
      */
+    @Order(3)
     @Title("显示广告")
     @CheckBox
     public void onShowAdsChecked(boolean isChecked) {
@@ -85,7 +88,7 @@ public class AppRocketConfig extends RocketConfig {
         Log.d(TAG, "测试环境： " + selectedValue);
     }
 
-
+    @Order(4)
     @Title("显示内容测试环境")
     @TextArea
     public String showInfo() {
