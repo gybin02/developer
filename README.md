@@ -25,9 +25,10 @@
 ```groovy
 //编译。 from 经期614 已加入
 compile 'com.meiyou.framework:developer:1.0.0-SNAPSHOT'
-// 经期 只在测试，预发阶段引入；因为包含二维码扫描，影响包大小，正式包去掉这功能
+// 经期 只在测试，预发阶段引入；因为包含二维码扫描，影响包大小，正式包去掉这功能. 正式版本引用空包可以不影响包的大小
 //compile 'com.meiyou.framework:developer-noop:1.0.0-SNAPSHOT'
 ```
+
 
 ### 使用
 
@@ -97,6 +98,8 @@ public class DeveloperConfig extends RocketConfig {
         }
     }
 ```
+#### 美柚已经接入情况：
+http://git.meiyou.im/Android/Android/wikis/%E5%BC%80%E5%8F%91%E8%80%85%E9%A1%B5%E9%9D%A2
 
 #### change log
 ##### COMPONENT_VERSION=1.0.0-SNAPSHOT
