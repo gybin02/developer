@@ -103,7 +103,7 @@ public class AppRocketConfig extends RocketConfig {
         Log.d(TAG, "doSearch: ");
         Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
     }
-
+    @Order(1)
     @EditText("输入Uri，如：meiyou:///news/comment/open")
     public void doUri(String uri) {
 //        MeetyouDilutions.create().formatProtocolService(uri);
