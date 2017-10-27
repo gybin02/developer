@@ -62,7 +62,7 @@ public class AppRocketConfig extends RocketConfig {
      * @Method 返回一个参数用来处理是否点击
      */
     @Order(3)
-    @Title("显示广告")
+    @Title("QaTest 功能(Charles查看埋点数据)")
     @CheckBox
     public void onShowAdsChecked(boolean isChecked) {
         Log.d(TAG, "是否显示广告： " + isChecked);
@@ -103,16 +103,16 @@ public class AppRocketConfig extends RocketConfig {
         Log.d(TAG, "doSearch: ");
         Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
     }
-    @Order(1)
+    @Order(5)
     @EditText("输入Uri，如：meiyou:///news/comment/open")
     public void doUri(String uri) {
 //        MeetyouDilutions.create().formatProtocolService(uri);
     }
 
-    @Override
-    public void onQrcodeSuccess(String result) {
-        super.onQrcodeSuccess(result);
-    }
+//    @Override
+//    public void onQrcodeSuccess(String result) {
+//        super.onQrcodeSuccess(result);
+//    }
 
     @Title("可视化埋点")
     @CheckBox

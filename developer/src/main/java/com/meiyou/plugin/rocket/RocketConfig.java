@@ -1,14 +1,10 @@
 package com.meiyou.plugin.rocket;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.linggan.zxing.activity.ZXingLibrary;
-import com.linggan.zxing.activity.ZxingCallback;
 import com.meiyou.plugin.rocket.annotation.Button;
 import com.meiyou.plugin.rocket.annotation.Order;
 import com.meiyou.plugin.rocket.common.ConfigListener;
@@ -71,14 +67,14 @@ public abstract class RocketConfig implements ConfigListener {
     /**
      * 清除本应用内部缓存
      */
-    @Order(2)
+    @Order(0)
     @Button("清除应用缓存并退出")
     public void clearAppCache() {
         RuntimeUtil.clearApp(context);
         Toast.makeText(context, "清除应用缓存成功", Toast.LENGTH_SHORT).show();
     }
 
-    @Order(3)
+    @Order(0)
     @Button("使用帮助")
     public void openWeb() {
         Intent intent = new Intent();
@@ -89,29 +85,29 @@ public abstract class RocketConfig implements ConfigListener {
         context.startActivity(intent);
     }
 
-    /**
-     * 进入二维码扫描
-     */
-    @Order(10)
-    @Button("二维码扫一扫，进入WebView执行Uri")
-    public void openQrCode() {
-        Context context = getContext();
-        ZXingLibrary.initDisplayOpinion(context);
-        ZXingLibrary.scan(context, new ZxingCallback() {
-            @Override
-            public void onSuccess(String result) {
-                super.onSuccess(result);
-                onQrcodeSuccess(result);
-            }
-        });
-    }
+//    /**
+//     * 进入二维码扫描
+//     */
+//    @Order(10)
+//    @Button("二维码扫一扫，进入WebView执行Uri")
+//    public void openQrCode() {
+//        Context context = getContext();
+//        ZXingLibrary.initDisplayOpinion(context);
+//        ZXingLibrary.scan(context, new ZxingCallback() {
+//            @Override
+//            public void onSuccess(String result) {
+//                super.onSuccess(result);
+//                onQrcodeSuccess(result);
+//            }
+//        });
+//    }
+//
+//    public void onQrcodeSuccess(String result) {
+//        Log.d(TAG, "onQrcodeSuccess: " + result);
+//    }
 
-    public void onQrcodeSuccess(String result) {
-        Log.d(TAG, "onQrcodeSuccess: " + result);
-    }
 
-
-    @Order(10)
+    @Order(0)
     @Button("卸载应用，对root设备有效")
     public void uninstallApp() {
         RuntimeUtil.uninstall(context);
