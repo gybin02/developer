@@ -77,7 +77,7 @@ public class Rocket {
                     if (order2 != null) {
                         value2 = order2.value();
                     }
-                    
+
                     return value1 - value2;
                 }
             });

@@ -240,7 +240,7 @@ class SettingsAdapter extends BaseAdapter {
                 if (!isTemp) {
                     PrefHelper.setBoolean(context, method.getName(), isChecked);
                 }
-                
+
             }
         });
 
