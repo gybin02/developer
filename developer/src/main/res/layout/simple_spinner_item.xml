@@ -17,12 +17,14 @@
 ** limitations under the License.
 */
 -->
-    <!--style="?android:attr/spinnerItemStyle"-->
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-          android:id="@android:id/text1"
-          android:singleLine="true"
+<!--style="?android:attr/spinnerItemStyle"-->
+<TextView android:id="@android:id/text1"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:ellipsize="marquee"
           android:padding="10dp"
-          android:textColor="@android:color/white"/>
+          android:singleLine="true"
+          android:textColor="@color/text_title"
+          tools:text="Helllo"/>

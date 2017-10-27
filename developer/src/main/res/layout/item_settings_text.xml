@@ -11,19 +11,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:textColor="#2A76AD"
+        android:textColor="@color/text_title"
         android:textSize="14sp"
         tools:text="Title"/>
 
     <TextView
         android:id="@+id/text_area"
-        android:background="@color/input_bg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:background="@color/input_bg"
+        android:padding="8dp"
         android:textColor="@android:color/black"
-        tools:text="Hello world Hello worldHello worldHello worldHello worldHello worldHello world"
-        android:padding="8dp"/>
-        
+        android:textSize="16sp"
+        tools:text="Hello world Hello worldHello worldHello worldHello worldHello worldHello world"/>
+
 
 </LinearLayout>

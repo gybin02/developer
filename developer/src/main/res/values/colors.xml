@@ -14,5 +14,7 @@
     <color name="bee_settings_divider_bg">#B2B2B2</color>
 
     <color name="input_bg">#E9E9E9</color>
+    
+    <color name="text_title">#2A76AD</color>
 
 </resources>
