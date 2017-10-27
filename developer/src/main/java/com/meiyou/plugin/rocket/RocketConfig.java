@@ -114,5 +114,15 @@ public abstract class RocketConfig implements ConfigListener {
         Toast.makeText(context, "卸载应用成功", Toast.LENGTH_SHORT).show();
     }
 
+    @Order(0)
+    @Button("安装Charles证书")
+    public void installProxy() {
+        String url = "chls.pro/ssl";
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        getContext().startActivity(intent);
+    }
+
 
 }
