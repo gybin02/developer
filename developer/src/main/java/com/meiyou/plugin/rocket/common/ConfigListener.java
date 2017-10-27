@@ -1,5 +1,6 @@
 package com.meiyou.plugin.rocket.common;
 
+import android.app.Activity;
 import android.content.Context;
 
 import java.util.List;
@@ -9,14 +10,20 @@ import java.util.Map;
  * It is used to provide necessary methods
  */
 public interface ConfigListener {
-@Deprecated
-  @SuppressWarnings("unused") void onInfoContentCreated(Map<String, String> content);
-@Deprecated
-  @SuppressWarnings("unused") void onLogContentCreated(List<String> list);
+    @Deprecated
+    @SuppressWarnings("unused")
+    void onInfoContentCreated(Map<String, String> content);
 
-  @SuppressWarnings("unused") void onClose();
+    @Deprecated
+    @SuppressWarnings("unused")
+    void onLogContentCreated(List<String> list);
 
-  @SuppressWarnings("unused") Context getContext();
+    @SuppressWarnings("unused")
+    void onClose();
 
-  @SuppressWarnings("unused") void setContext(Context context);
+    @SuppressWarnings("unused")
+    Context getContext();
+
+    @SuppressWarnings("unused")
+    void setContext(Activity context);
 }

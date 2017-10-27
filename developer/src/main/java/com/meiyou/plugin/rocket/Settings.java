@@ -1,6 +1,6 @@
 package com.meiyou.plugin.rocket;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.Gravity;
 
 /**
@@ -13,7 +13,7 @@ public class Settings {
 
     private static final int DEFAULT_BEE_SIZE = 80;
 
-    private Context context;
+    private Activity context;
     /**
      * 默认位置： 右下角
      */
@@ -21,7 +21,7 @@ public class Settings {
     private int beeSize = DEFAULT_BEE_SIZE;
     private int[] beeMargin = {0, 0, 0, 200};
 
-    public Settings(Context context) {
+    public Settings(Activity context) {
         this.context = context;
     }
 
@@ -47,7 +47,7 @@ public class Settings {
         new Rocket(this).inject(config);
     }
 
-    public Context getContext() {
+    public Activity getContext() {
         return context;
     }
 

@@ -1,5 +1,6 @@
 package com.meiyou.plugin.rocket;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -26,10 +27,10 @@ public abstract class RocketConfig implements ConfigListener {
 
     private static final String TAG = "RocketConfig";
 
-    public Context context;
+    public Activity context;
 
     @Override
-    public void setContext(Context context) {
+    public void setContext(Activity context) {
         this.context = context;
     }
 
@@ -37,7 +38,7 @@ public abstract class RocketConfig implements ConfigListener {
      * 获取当前的Context，需要时可强转成Activity；
      */
     @Override
-    public Context getContext() {
+    public Activity getContext() {
         return context;
     }
 

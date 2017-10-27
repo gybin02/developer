@@ -1,6 +1,6 @@
 package com.meiyou.plugin.rocket;
 
-import android.content.Context;
+import android.app.Activity;
 import android.util.Log;
 
 import com.meiyou.plugin.rocket.annotation.Order;
@@ -29,7 +29,7 @@ public class Rocket {
         this.settings = settings;
     }
 
-    public static Settings init(Context context) {
+    public static Settings init(Activity context) {
         return new Settings(context);
     }
 
