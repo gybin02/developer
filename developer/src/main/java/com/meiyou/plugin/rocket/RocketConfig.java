@@ -117,7 +117,7 @@ public abstract class RocketConfig implements ConfigListener {
     @Order(0)
     @Button("安装Charles证书")
     public void installProxy() {
-        String url = "chls.pro/ssl";
+        String url = "http://chls.pro/ssl";
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
