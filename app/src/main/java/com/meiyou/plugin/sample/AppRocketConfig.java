@@ -92,7 +92,10 @@ public class AppRocketConfig extends RocketConfig {
     @Title("显示内容测试环境")
     @TextArea
     public String showInfo() {
-        String content = "Hello world";
+        String content="";
+        for (int i = 0; i < 10; i++) {
+            content+="Hello world ";
+        }
         return content;
     }
 

@@ -17,10 +17,13 @@
 
     <TextView
         android:id="@+id/text_area"
+        android:background="@color/input_bg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="@android:color/black"
+        tools:text="Hello world Hello worldHello worldHello worldHello worldHello worldHello world"
         android:padding="8dp"/>
+        
 
 </LinearLayout>

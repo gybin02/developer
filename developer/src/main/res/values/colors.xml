@@ -12,4 +12,7 @@
 
     <color name="checkbox_color">#BF9B04</color>
     <color name="bee_settings_divider_bg">#B2B2B2</color>
+
+    <color name="input_bg">#FFDFDFDF</color>
+
 </resources>
