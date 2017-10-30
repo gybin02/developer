@@ -16,7 +16,7 @@ public class AppRocketConfig extends RocketConfig {
 
     private static final String TAG = "AppBeeConfig";
 
-//    @Title("Test")
+    //    @Title("Test")
 //    @CheckBox
 //    public void test2(boolean isCheck) {
 //
@@ -92,9 +92,9 @@ public class AppRocketConfig extends RocketConfig {
     @Title("显示内容测试环境")
     @TextArea
     public String showInfo() {
-        String content="";
+        String content = "";
         for (int i = 0; i < 10; i++) {
-            content+="Hello world ";
+            content += "Hello world ";
         }
         return content;
     }
@@ -106,11 +106,37 @@ public class AppRocketConfig extends RocketConfig {
         Log.d(TAG, "doSearch: ");
         Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
     }
+
     @Order(5)
     @EditText("输入Uri，如：meiyou:///news/comment/open")
     public void doUri(String uri) {
-//        MeetyouDilutions.create().formatProtocolService(uri);
+
     }
+
+
+//        try {
+//            String host = "192.168.53.161";
+//            int port = 8800;
+//            WifiProxyChanger.changeWifiStaticProxySettings(host, port,context);
+//            Toast.makeText(context,"成功设置WiFi 代理:"+host+" "+port,Toast.LENGTH_SHORT).show();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (NoSuchMethodException e) {
+//            e.printStackTrace();
+//        } catch (InvocationTargetException e) {
+//            e.printStackTrace();
+//        } catch (InstantiationException e) {
+//            e.printStackTrace();
+//        } catch (IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (NoSuchFieldException e) {
+//            e.printStackTrace();
+//        } catch (ApiNotSupportedException e) {
+//            e.printStackTrace();
+//        } catch (NullWifiConfigurationException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 //    @Override
 //    public void onQrcodeSuccess(String result) {
@@ -120,7 +146,7 @@ public class AppRocketConfig extends RocketConfig {
     @Title("可视化埋点")
     @CheckBox
     public void openWHMD(boolean enable) {
-        Toast.makeText(context, "可视化埋点状态: "+enable, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "可视化埋点状态: " + enable, Toast.LENGTH_SHORT).show();
     }
-    
+
 }

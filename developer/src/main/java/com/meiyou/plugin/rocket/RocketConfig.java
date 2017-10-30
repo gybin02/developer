@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
 
+import com.bitbucket.lonelydeveloper97.wifiproxysettingslibrary.proxy_change_realisation.wifi_network.WifiProxyChanger;
 import com.meiyou.plugin.rocket.annotation.Button;
+import com.meiyou.plugin.rocket.annotation.EditText;
 import com.meiyou.plugin.rocket.annotation.Order;
 import com.meiyou.plugin.rocket.common.ConfigListener;
 import com.meiyou.plugin.rocket.common.RuntimeUtil;
@@ -124,5 +126,36 @@ public abstract class RocketConfig implements ConfigListener {
         getContext().startActivity(intent);
     }
 
+    @Order(5)
+    @EditText("自动设置WiFi代理，格式：192.168.53.161:8888")
+    public void doWifiProxy(String input) {
+//        MeetyouDilutions.create().formatProtocolService(uri);
+//        WifiConnect.setHttpProxySystemProperty("192.168.53.171","8800",null,context);
+        //支持 4.0 ~ 5.0,
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            Intent intent = new Intent();
+            intent.setAction("android.net.wifi.PICK_WIFI_NETWORK");
+            context.startActivity(intent);
+        } else {
+            //https://github.com/lonelydeveloper97/android-proxy-changing
+            try {
+                String[] split = input.split(":");
+                if (split.length != 2) {
+                    Toast.makeText(context, "代理输入有误！ 正确格式：192.168.53.161:8888 ", Toast.LENGTH_SHORT)
+                         .show();
+                    return;
+                }
+//                "192.168.53.161";
+                String host = split[0];
+                int port = Integer.parseInt(split[1]);
+                WifiProxyChanger.changeWifiStaticProxySettings(host, port, context);
+                Toast.makeText(context, "成功设置WiFi 代理:" + host + " " + port, Toast.LENGTH_SHORT)
+                     .show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
+        }
+
+    }
 }
