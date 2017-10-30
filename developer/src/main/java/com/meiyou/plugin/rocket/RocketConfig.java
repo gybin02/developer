@@ -9,6 +9,7 @@ import com.bitbucket.lonelydeveloper97.wifiproxysettingslibrary.proxy_change_rea
 import com.meiyou.plugin.rocket.annotation.Button;
 import com.meiyou.plugin.rocket.annotation.EditText;
 import com.meiyou.plugin.rocket.annotation.Order;
+import com.meiyou.plugin.rocket.annotation.Title;
 import com.meiyou.plugin.rocket.common.ConfigListener;
 import com.meiyou.plugin.rocket.common.RuntimeUtil;
 
@@ -126,8 +127,9 @@ public abstract class RocketConfig implements ConfigListener {
         getContext().startActivity(intent);
     }
 
-    @Order(5)
-    @EditText("自动设置WiFi代理，格式：192.168.53.161:8888")
+    @Order(1)
+    @Title("自动设置WiFi代理")
+    @EditText("格式：192.168.53.161:8888")
     public void doWifiProxy(String input) {
 //        MeetyouDilutions.create().formatProtocolService(uri);
 //        WifiConnect.setHttpProxySystemProperty("192.168.53.171","8800",null,context);

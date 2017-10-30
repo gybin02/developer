@@ -19,8 +19,11 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface EditText {
     /**
      * EditText hint 内容
+     *
      * @return
      */
     String value() default "";
-    
+
+    //考虑，多参数，editText 设置默认值
+//    String hint() default "";
 }
