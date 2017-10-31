@@ -103,10 +103,10 @@ http://git.meiyou.im/Android/Android/wikis/%E5%BC%80%E5%8F%91%E8%80%85%E9%A1%B5%
 
 #### change log
 #### 1.0.5-SNAPSHOT
-1. remove zxing包
-2. 排序功能优化，
-3. 新增 安装Charles证书
-4. 新增 自动设置WiFi代理，支持安卓5.0以下所有版本。
+1. remove zxing包。
+2. 排序功能优化。通用功能提前。UI优化等。
+3. 新增 点击安装Charles证书
+4. 新增 自动设置WiFi代理，支持安卓5.0以下所有版本。5.0以上会自动跳到WiFi设置页面。
 
 #### 1.0.4-SNAPSHOT
 1. 新增 Order功能，支持排序显示
