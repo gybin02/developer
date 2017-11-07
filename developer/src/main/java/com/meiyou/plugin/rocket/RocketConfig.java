@@ -11,6 +11,7 @@ import com.meiyou.plugin.rocket.annotation.EditText;
 import com.meiyou.plugin.rocket.annotation.Order;
 import com.meiyou.plugin.rocket.annotation.Title;
 import com.meiyou.plugin.rocket.common.ConfigListener;
+import com.meiyou.plugin.rocket.common.RocketUtil;
 import com.meiyou.plugin.rocket.common.RuntimeUtil;
 
 import java.util.List;
@@ -109,16 +110,8 @@ public abstract class RocketConfig implements ConfigListener {
 //        Log.d(TAG, "onQrcodeSuccess: " + result);
 //    }
 
-
     @Order(0)
-    @Button("卸载应用，对root设备有效")
-    public void uninstallApp() {
-        RuntimeUtil.uninstall(context);
-        Toast.makeText(context, "卸载应用成功", Toast.LENGTH_SHORT).show();
-    }
-
-    @Order(0)
-    @Button("安装Charles证书")
+    @Button("安装Charles HTTPS证书")
     public void installProxy() {
         String url = "http://chls.pro/ssl";
         Intent intent = new Intent();
@@ -128,8 +121,8 @@ public abstract class RocketConfig implements ConfigListener {
     }
 
     @Order(1)
-    @Title("自动设置WiFi代理")
-    @EditText("格式：192.168.53.161:8888")
+    @Title("设置Charles WiFi代理")
+    @EditText("格式：192.168.53.161:8888，不包含HTTP")
     public void doWifiProxy(String input) {
 //        MeetyouDilutions.create().formatProtocolService(uri);
 //        WifiConnect.setHttpProxySystemProperty("192.168.53.171","8800",null,context);
@@ -138,6 +131,8 @@ public abstract class RocketConfig implements ConfigListener {
             Intent intent = new Intent();
             intent.setAction("android.net.wifi.PICK_WIFI_NETWORK");
             context.startActivity(intent);
+//            String tip= "Ip 地址已经拷贝，"
+            RocketUtil.copy(context, input);
         } else {
             //https://github.com/lonelydeveloper97/android-proxy-changing
             try {
@@ -159,5 +154,12 @@ public abstract class RocketConfig implements ConfigListener {
 
         }
 
+    }
+
+
+    @Button("卸载应用，对root设备有效")
+    public void uninstallApp() {
+        RuntimeUtil.uninstall(context);
+        Toast.makeText(context, "卸载应用成功", Toast.LENGTH_SHORT).show();
     }
 }

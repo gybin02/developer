@@ -1,7 +1,5 @@
 package com.meiyou.plugin.rocket;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
@@ -21,6 +19,7 @@ import android.widget.Toast;
 
 import com.meiyou.jet.developer.R;
 import com.meiyou.plugin.rocket.common.PrefHelper;
+import com.meiyou.plugin.rocket.common.RocketUtil;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -151,7 +150,7 @@ class SettingsAdapter extends BaseAdapter {
         text_area.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                copy(context, finalContent);
+                RocketUtil.copy(context, finalContent);
             }
         });
 
@@ -246,19 +245,5 @@ class SettingsAdapter extends BaseAdapter {
 
         return view;
     }
-
-    /**
-     * 拷贝到剪贴板
-     *
-     * @param context
-     * @param content
-     */
-    private static void copy(Context context, String content) {
-        //拷贝到剪贴板
-        ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData myClip = ClipData.newPlainText("text", content);
-        clipboardManager.setPrimaryClip(myClip);
-
-        Toast.makeText(context, "已经复制到剪贴板", Toast.LENGTH_SHORT).show();
-    }
+    
 }
