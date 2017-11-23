@@ -1,7 +1,6 @@
 package com.meiyou.plugin.rocket;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.util.List;
 import java.util.Map;
@@ -51,9 +50,9 @@ public abstract class RocketConfig {
 
     }
 
-    public void onQrcodeSuccess(String result) {
-        Log.d(TAG, "onQrcodeSuccess: " + result);
-    }
+//    public void onQrcodeSuccess(String result) {
+//        Log.d(TAG, "onQrcodeSuccess: " + result);
+//    }
 
 
 }
