@@ -106,6 +106,7 @@ class SettingsAdapter extends BaseAdapter {
             }
         }
 
+        final String methodName = method.getName();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,7 +117,7 @@ class SettingsAdapter extends BaseAdapter {
                 }
                 try {
                     method.invoke(instance, uri);
-                    PrefHelper.setString(context, method.getName(), uri);
+                    PrefHelper.setString(context, methodName, uri);
                 } catch (Exception e) {
                     Log.e(TAG, e.getMessage());
                 }
@@ -124,9 +125,14 @@ class SettingsAdapter extends BaseAdapter {
         });
 
         //上次记录
-        String string = PrefHelper.getString(context, method.getName());
-        if (!TextUtils.isEmpty(string)) {
-            editText.setText(string);
+        try {
+            String string = PrefHelper.getString(context, methodName);
+            Log.e(TAG, "pref: Key: " + methodName);
+            if (!TextUtils.isEmpty(string)) {
+                editText.setText(string);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return view;
     }
@@ -245,5 +251,5 @@ class SettingsAdapter extends BaseAdapter {
 
         return view;
     }
-    
+
 }
