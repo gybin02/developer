@@ -38,7 +38,7 @@ public class PrefHelper {
         getEditor(context).putString(key, value).commit();
     }
 
-    static SharedPreferences getPrefs(Context context) {
+   public static SharedPreferences getPrefs(Context context) {
         return context.getSharedPreferences(KEY_PREFS, Context.MODE_PRIVATE);
     }
 
