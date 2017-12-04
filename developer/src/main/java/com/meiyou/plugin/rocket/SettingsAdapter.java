@@ -22,7 +22,9 @@ import com.meiyou.plugin.rocket.common.PrefHelper;
 import com.meiyou.plugin.rocket.common.RocketUtil;
 
 import java.lang.reflect.Method;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 构造View Adapter
@@ -126,8 +128,23 @@ class SettingsAdapter extends BaseAdapter {
 
         //上次记录
         try {
-            String string = PrefHelper.getString(context, methodName);
             Log.e(TAG, "pref: Key: " + methodName);
+            Map<String, ?> all = PrefHelper.getPrefs(context).getAll();
+            Iterator<? extends Map.Entry<String, ?>> iterator = all.entrySet().iterator();
+            StringBuilder stringBuilder = new StringBuilder();
+            while (iterator.hasNext()) {
+                Map.Entry<String, ?> entry = iterator.next();
+                stringBuilder.append(entry.getKey())
+                             .append(":")
+                             .append(entry.getValue())
+                             .append("；  ");
+            }
+            String alllStr = stringBuilder.toString();
+            Log.e(TAG, "createEditText: " + alllStr);
+            
+            String string = PrefHelper.getString(context, methodName);
+
+
             if (!TextUtils.isEmpty(string)) {
                 editText.setText(string);
             }
