@@ -5,13 +5,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
 
-import com.bitbucket.lonelydeveloper97.wifiproxysettingslibrary.proxy_change_realisation.wifi_network.WifiProxyChanger;
 import com.meiyou.plugin.rocket.annotation.Button;
-import com.meiyou.plugin.rocket.annotation.EditText;
 import com.meiyou.plugin.rocket.annotation.Order;
-import com.meiyou.plugin.rocket.annotation.Title;
 import com.meiyou.plugin.rocket.common.ConfigListener;
-import com.meiyou.plugin.rocket.common.RocketUtil;
 import com.meiyou.plugin.rocket.common.RuntimeUtil;
 
 import java.util.List;
@@ -110,56 +106,56 @@ public abstract class RocketConfig implements ConfigListener {
 //        Log.d(TAG, "onQrcodeSuccess: " + result);
 //    }
 
-    @Order(0)
-    @Button("安装Charles HTTPS证书")
-    public void installProxy() {
-        String url = "http://chls.pro/ssl";
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        getContext().startActivity(intent);
-    }
+//    @Order(0)
+//    @Button("安装Charles HTTPS证书")
+//    public void installProxy() {
+//        String url = "http://chls.pro/ssl";
+//        Intent intent = new Intent();
+//        intent.setAction(Intent.ACTION_VIEW);
+//        intent.setData(Uri.parse(url));
+//        getContext().startActivity(intent);
+//    }
 
-    @Order(1)
-    @Title("设置Charles WiFi代理")
-    @EditText("格式：192.168.53.161:8888，不包含HTTP")
-    public void doWifiProxy(String input) {
-//        MeetyouDilutions.create().formatProtocolService(uri);
-//        WifiConnect.setHttpProxySystemProperty("192.168.53.171","8800",null,context);
-        //支持 4.0 ~ 5.0,
-        if (android.os.Build.VERSION.SDK_INT >= 21) {
-            Intent intent = new Intent();
-            intent.setAction("android.net.wifi.PICK_WIFI_NETWORK");
-            context.startActivity(intent);
-//            String tip= "Ip 地址已经拷贝，"
-            RocketUtil.copy(context, input);
-        } else {
-            //https://github.com/lonelydeveloper97/android-proxy-changing
-            try {
-                String[] split = input.split(":");
-                if (split.length != 2) {
-                    Toast.makeText(context, "代理输入有误！ 正确格式：192.168.53.161:8888 ", Toast.LENGTH_SHORT)
-                         .show();
-                    return;
-                }
-//                "192.168.53.161";
-                String host = split[0];
-                int port = Integer.parseInt(split[1]);
-                WifiProxyChanger.changeWifiStaticProxySettings(host, port, context);
-                Toast.makeText(context, "成功设置WiFi 代理:" + host + " " + port, Toast.LENGTH_SHORT)
-                     .show();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+//    @Order(1)
+//    @Title("设置Charles WiFi代理")
+//    @EditText("格式：192.168.53.161:8888，不包含HTTP")
+//    public void doWifiProxy(String input) {
+////        MeetyouDilutions.create().formatProtocolService(uri);
+////        WifiConnect.setHttpProxySystemProperty("192.168.53.171","8800",null,context);
+//        //支持 4.0 ~ 5.0,
+//        if (android.os.Build.VERSION.SDK_INT >= 21) {
+//            Intent intent = new Intent();
+//            intent.setAction("android.net.wifi.PICK_WIFI_NETWORK");
+//            context.startActivity(intent);
+////            String tip= "Ip 地址已经拷贝，"
+//            RocketUtil.copy(context, input);
+//        } else {
+//            //https://github.com/lonelydeveloper97/android-proxy-changing
+//            try {
+//                String[] split = input.split(":");
+//                if (split.length != 2) {
+//                    Toast.makeText(context, "代理输入有误！ 正确格式：192.168.53.161:8888 ", Toast.LENGTH_SHORT)
+//                         .show();
+//                    return;
+//                }
+////                "192.168.53.161";
+//                String host = split[0];
+//                int port = Integer.parseInt(split[1]);
+//                WifiProxyChanger.changeWifiStaticProxySettings(host, port, context);
+//                Toast.makeText(context, "成功设置WiFi 代理:" + host + " " + port, Toast.LENGTH_SHORT)
+//                     .show();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//
+//        }
+//
+//    }
 
-        }
 
-    }
-
-
-    @Button("卸载应用，对root设备有效")
-    public void uninstallApp() {
-        RuntimeUtil.uninstall(context);
-        Toast.makeText(context, "卸载应用成功", Toast.LENGTH_SHORT).show();
-    }
+//    @Button("卸载应用，对root设备有效")
+//    public void uninstallApp() {
+//        RuntimeUtil.uninstall(context);
+//        Toast.makeText(context, "卸载应用成功", Toast.LENGTH_SHORT).show();
+//    }
 }
