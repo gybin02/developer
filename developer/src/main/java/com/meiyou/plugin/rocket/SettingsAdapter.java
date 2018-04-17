@@ -257,7 +257,14 @@ class SettingsAdapter extends BaseAdapter {
                 try {
                     method.invoke(instance, isChecked);
                 } catch (Exception e) {
-                    Log.e(TAG, e.getMessage());
+                    if(e!=null){
+                        String message = e.getMessage();
+                        if(!TextUtils.isEmpty(message)){
+                            Log.e(TAG, message);
+                        }
+                    }
+                    
+                    
                 }
                 if (!isTemp) {
                     PrefHelper.setBoolean(context, method.getName(), isChecked);
