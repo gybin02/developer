@@ -1,14 +1,13 @@
 package com.meiyou.plugin.sample;
 
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.meiyou.plugin.rocket.RocketConfig;
 import com.meiyou.plugin.rocket.annotation.Button;
 import com.meiyou.plugin.rocket.annotation.CheckBox;
-import com.meiyou.plugin.rocket.annotation.EditText;
 import com.meiyou.plugin.rocket.annotation.Order;
-import com.meiyou.plugin.rocket.annotation.Spinner;
 import com.meiyou.plugin.rocket.annotation.TextArea;
 import com.meiyou.plugin.rocket.annotation.Title;
 
@@ -52,28 +51,31 @@ public class AppRocketConfig extends RocketConfig {
     @Button("测试请求网络")
     public void requestNetwork() {
         Log.d(TAG, " 测试请求网络 requestNetwork");
+        View close = super.context.findViewById(R.id.close);
+        close.performClick();
+        
     }
 
-
-    /**
-     * 生成一个CheckBox
-     *
-     * @Title 用来 显示Label
-     * @Method 返回一个参数用来处理是否点击
-     */
-    @Order(3)
-    @Title("QaTest 功能(Charles查看埋点数据)")
-    @CheckBox
-    public void onShowAdsChecked(boolean isChecked) {
-        Log.d(TAG, "是否显示广告： " + isChecked);
-    }
-
-
-    @Title("测试")
-    @CheckBox
-    public void onTest(boolean isCheck) {
-        Log.e(TAG, "onTest: " + isCheck);
-    }
+//
+//    /**
+//     * 生成一个CheckBox
+//     *
+//     * @Title 用来 显示Label
+//     * @Method 返回一个参数用来处理是否点击
+//     */
+//    @Order(3)
+//    @Title("QaTest 功能(Charles查看埋点数据)")
+//    @CheckBox
+//    public void onShowAdsChecked(boolean isChecked) {
+//        Log.d(TAG, "是否显示广告： " + isChecked);
+//    }
+//
+//
+//    @Title("测试")
+//    @CheckBox
+//    public void onTest(boolean isCheck) {
+//        Log.e(TAG, "onTest: " + isCheck);
+//    }
 
     /**
      * 生成一个 Spinner
@@ -82,11 +84,11 @@ public class AppRocketConfig extends RocketConfig {
      * Title 是用来显示Label
      * Method 返回选中的 String;
      */
-    @Title("测试环境")
-    @Spinner({"测试", "预发", "正式"})
-    public void onEnvironmentSelected(String selectedValue) {
-        Log.d(TAG, "测试环境： " + selectedValue);
-    }
+//    @Title("测试环境")
+//    @Spinner({"测试", "预发", "正式"})
+//    public void onEnvironmentSelected(String selectedValue) {
+//        Log.d(TAG, "测试环境： " + selectedValue);
+//    }
 
     @Order(4)
     @Title("显示内容测试环境")
@@ -99,19 +101,19 @@ public class AppRocketConfig extends RocketConfig {
         return content;
     }
 
-    @Title("显示Edit TextView")
-    @EditText("显示Edit TextView, Hint ")
-    public void doSearch(String key) {
-        String content = "Hello world";
-        Log.d(TAG, "doSearch: ");
-        Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
-    }
-
-    @Order(5)
-    @EditText("输入Uri，如：meiyou:///news/comment/open")
-    public void doUri(String uri) {
-
-    }
+//    @Title("显示Edit TextView")
+//    @EditText("显示Edit TextView, Hint ")
+//    public void doSearch(String key) {
+//        String content = "Hello world";
+//        Log.d(TAG, "doSearch: ");
+//        Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
+//    }
+//
+//    @Order(5)
+//    @EditText("输入Uri，如：meiyou:///news/comment/open")
+//    public void doUri(String uri) {
+//
+//    }
 
 
 //        try {
@@ -147,6 +149,30 @@ public class AppRocketConfig extends RocketConfig {
     @CheckBox
     public void openWHMD(boolean enable) {
         Toast.makeText(context, "可视化埋点状态: " + enable, Toast.LENGTH_SHORT).show();
+    }
+
+    @Order(100)
+    @Button("测试请求网络")
+    public void sdf() {
+        Log.d(TAG, " 测试请求网络 requestNetwork");
+    }
+
+    @Order(100)
+    @Button("测试请求网络")
+    public void sdf1() {
+        Log.d(TAG, " 测试请求网络 requestNetwork");
+    }
+
+    @Order(100)
+    @Button("测试请求网络")
+    public void sdf31() {
+        Log.d(TAG, " 测试请求网络 requestNetwork");
+    }
+
+    @Order(100)
+    @Button("测试请求网络")
+    public void sd12f() {
+        Log.d(TAG, " 测试请求网络 requestNetwork");
     }
 
 }

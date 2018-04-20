@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.Display;
 import android.view.GestureDetector;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,11 +78,18 @@ final class UiHandler implements View.OnClickListener {
 
         Activity activity = (Activity) context;
         ViewGroup rootView = (ViewGroup) activity.getWindow().getDecorView();
-        LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.container, rootView, true);
-        mainContainer = (ViewGroup) rootView.findViewById(R.id.main_container);
-        listView = (ListView) mainContainer.findViewById(R.id.list);
+//        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = View.inflate(activity.getApplicationContext(), R.layout.container, null);
+        initListeners(view);
+
+
+//        inflater.inflate(R.layout.container, rootView, true);
+        mainContainer = (ViewGroup) view.findViewById(R.id.main_container);
+//        listView = (ListView) view.findViewById(R.id.list);
+        listView = new ListView(context);
         beeImageView = new ImageView(context);
+        rootView.addView(view);
+
 //        initListView(listView);
 //
         //calculate the display size
@@ -109,11 +115,11 @@ final class UiHandler implements View.OnClickListener {
      * Inject the bee mainContainer and adds all preferences that are set
      */
     void inject() {
-        Activity activity = (Activity) context;
-        ViewGroup rootView = (ViewGroup) activity.getWindow().getDecorView();
-        setBeeButton(rootView);
-        initListeners(rootView);
-        initSettingsContent(methodInfoList);
+//        Activity activity = (Activity) context;
+//        ViewGroup rootView = (ViewGroup) activity.getWindow().getDecorView();
+//        setBeeButton(rootView);
+//        initListeners(rootView);
+//        initSettingsContent(methodInfoList);
     }
 
     void initSettingsContent(List<MethodInfo> list) {
@@ -177,7 +183,16 @@ final class UiHandler implements View.OnClickListener {
      * @param view is the main container
      */
     private void initListeners(View view) {
-        view.findViewById(R.id.close).setOnClickListener(this);
+        View closeView = view.findViewById(R.id.close);
+        closeView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: ");
+                mainContainer.setVisibility(View.GONE);
+                beeImageView.setVisibility(View.VISIBLE);
+                configListener.onClose();
+            }
+        });
 //        view.findViewById(R.id.settings).setOnClickListener(this);
 //        view.findViewById(R.id.info).setOnClickListener(this);
 //        view.findViewById(R.id.log).setOnClickListener(this);
@@ -234,6 +249,7 @@ final class UiHandler implements View.OnClickListener {
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
+            Log.e(TAG, "onTouch: ");
             if (gestureDetector.onTouchEvent(event)) {
                 return true;
             }
