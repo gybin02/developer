@@ -114,6 +114,6 @@ http://git.meiyou.im/Android/Android/wikis/%E5%BC%80%E5%8F%91%E8%80%85%E9%A1%B5%
 ##### COMPONENT_VERSION=1.0.0-SNAPSHOT
 - @Checkbox 新增 isTemp功能； 
 - Develop UI 修改
-
+####  小心继承的类被混淆导致， checkbox 异常
 
 
