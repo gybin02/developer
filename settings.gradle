@@ -1,6 +1,0 @@
-include ':app'
-//include ':rocket'
-include ':developer'
-include ':developer-noop'
-//include(':developer')
-//project(':developer').projectDir = new File('../developer')
